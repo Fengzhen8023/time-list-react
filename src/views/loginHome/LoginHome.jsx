@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon } from 'antd';
 import LoginFormPart from 'components/loginFormPart/LoginFormPart'
+import RegisterFormPart from 'components/registerFormPart/RegisterFormPart'
 import Store from 'myRedux/Store'
 import { SHOW_LOGIN_PART, SHOW_REGISTER_PAERT, SHOW_RESET_PASSWORD_PART } from 'myRedux/actionType'
 
@@ -45,7 +46,9 @@ class Login extends React.Component {
                 </div>
 
                 <div className="login-content">
-                    <LoginFormPart />
+                    {/* <LoginFormPart /> */}
+
+                    <RegisterFormPart />
                     <div className="about-link">
                         <span>广州奇创信息科技有限公司</span>
                         <a href="#">www.shiguangxu.com</a>
