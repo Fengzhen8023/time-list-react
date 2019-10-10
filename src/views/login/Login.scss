@@ -100,6 +100,20 @@
                     box-sizing: border-box;
                 }
 
+                .error-message {
+                    width: 10rem;
+                    position: absolute;
+                    top: 50%;
+                    right: -50%;
+                    transform: translate(0, -50%);
+                    color: #fff;
+                    font-size: 16px;
+                }
+
+                input:focus {
+                    box-shadow: 0 8px 18px 0 rgba(2, 92, 209, .57);
+                }
+
                 input::-webkit-input-placeholder {
                     color: #fff;
                 }
@@ -114,6 +128,10 @@
 
                 input:-ms-input-placeholder {
                     color: #fff;
+                }
+
+                .account-box {
+                    position: relative;
                 }
 
                 .password-box {
@@ -195,4 +213,8 @@
     }
 
 
+}
+
+.hide-item {
+    display: none;
 }
