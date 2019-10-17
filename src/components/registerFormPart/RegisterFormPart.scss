@@ -79,6 +79,25 @@
                     outline: none;
                     box-sizing: border-box;
                 }
+
+                .varification-input {
+                    text-align: left;
+                    padding-left: 6rem;
+                }
+
+                .getVericationCode {
+                    position: absolute;
+                    width: 6rem;
+                    top: 50%;
+                    left: 60%;
+                    transform: translate(0, -50%);
+                    color: #fff;
+                    cursor: pointer;
+
+                    .pipe-symbol {
+                        margin-right: 1rem;
+                    }
+                }
     
                 .error-message {
                     width: 20rem;

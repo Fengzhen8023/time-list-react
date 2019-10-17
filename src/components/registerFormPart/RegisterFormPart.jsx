@@ -20,6 +20,7 @@ class RegisterFormPart extends React.Component {
             verificationCodeErrorMessage: "请输入验证码",
             passwordErrorMessage: "请输入密码",
             rePasswordErrorMessage: "请再次确认登录密码",
+            getVericationCodeText: "获取验证码",
             isVerificationCodeErrorMessageShow: false,
             isrePasswordErrorMessageShow: false,
             isPasswordErrorMessageShow: false,
@@ -71,6 +72,7 @@ class RegisterFormPart extends React.Component {
                         <p className="phone-number">+86 {this.state.phone}</p>
                         <div className={`info-form varification-code-box input-box${this.state.isVerificationCodeShakeAnimateShow ? " animated shake bounce fast" : ""}`}>
                             <input
+                                className="varification-input"
                                 onFocus={() => this.changePlacehoder("verificationCodePlaceholder", "")}
                                 onBlur={() => this.changePlacehoder("verificationCodePlaceholder", "请输入验证码")}
                                 onKeyDown={(e) => this.handleKeyDown(e)}
@@ -78,6 +80,10 @@ class RegisterFormPart extends React.Component {
                                 value={this.state.verificationCode}
                                 placeholder={this.state.verificationCodePlaceholder}
                                 type="text" />
+                            <div className="getVericationCode">
+                                <span className="pipe-symbol">|</span>
+                                <span onClick={this.getVerication}>{this.state.getVericationCodeText}</span>
+                            </div>
                             <span className={`error-message${this.state.isVerificationCodeErrorMessageShow ? "" : " hide-item"}`}>{this.state.verificationCodeErrorMessage}</span>
                         </div>
                         <div className={`info-form password-box input-box${this.state.isPasswordShakeAnimateShow ? " animated shake bounce fast" : ""}`}>
@@ -201,6 +207,12 @@ class RegisterFormPart extends React.Component {
                 isInputBackSpace: false
             });
         }
+    }
+
+    getVerication = () => {
+        this.setState({
+            getVericationCodeText: "发送中 . . ."
+        });
     }
 
     isGoToRegister = () => {
