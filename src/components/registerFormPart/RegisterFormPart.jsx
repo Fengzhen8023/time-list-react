@@ -6,7 +6,7 @@ class RegisterFormPart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            phone: "13659894548",
+            phone: "",
             verificationCode: "",
             password: "",
             rePassword: "",
@@ -27,7 +27,8 @@ class RegisterFormPart extends React.Component {
             isPasswordShakeAnimateShow: false,
             isRePasswordShakeAnimateShow: false,
             isInputBackSpace: false,
-            isAgreementChecked: true
+            isAgreementChecked: true,
+            currentStep: 1
         }
     }
 
@@ -35,7 +36,7 @@ class RegisterFormPart extends React.Component {
         return (
             <div className="register-main">
                 <div className="register-title">欢迎注册</div>
-                <div className="register-step register-step-01 hide-item">
+                <div className={ `register-step register-step-01${this.state.currentStep === 1 ? "" : " hide-item"}` }>
                     <div className={`info-form${this.state.isShakeAnimateShow ? " animated shake bounce fast" : ""}`}>
                         <div className="phone-box input-box">
                             <input
@@ -63,7 +64,7 @@ class RegisterFormPart extends React.Component {
                     </div>
                 </div>
 
-                <div className="register-step register-step-02">
+                <div className={ `register-step register-step-02${this.state.currentStep === 2 ? "" : " hide-item"}` }>
                     <div className="info-form">
                         <p className="phone-number">+86 {this.state.phone}</p>
                         <div className={`info-form varification-code-box input-box${this.state.isVerificationCodeShakeAnimateShow ? " animated shake bounce fast" : ""}`}>
@@ -205,11 +206,12 @@ class RegisterFormPart extends React.Component {
             console.log("手机符合要求： ", this.state.phone);
             this.setState({
                 isPhoneErrorMessageShow: false,
+                currentStep: 2
             });
             return false;
         }
 
-        if(this.state.phone.length < 1) {
+        if(this.state.phone.length === 0) {
             this.setState({
                 "phoneErrorMessage": "请输入手机号"
             });
@@ -231,26 +233,83 @@ class RegisterFormPart extends React.Component {
     }
 
     confirmRegister = () => {
-        console.log("确认注册");
-        console.log("验证码： ", this.state.verificationCode);
-        console.log("密码： ", this.state.password);
-        console.log("确认密码： ", this.state.rePassword);
-
-        /*
+        if (!this.state.isAgreementChecked) {
+            return false;
+        }
+        this.setState({
             isVerificationCodeShakeAnimateShow: false,
             isPasswordShakeAnimateShow: false,
             isRePasswordShakeAnimateShow: false,
+        }, () => {
+            setTimeout(() => {
+                if(this.state.verificationCode.length === 0) {
+                    this.setState({
+                        isVerificationCodeShakeAnimateShow: true,
+                        isVerificationCodeErrorMessageShow: true,
+                        verificationCodeErrorMessage: "请输入验证码",
+                    })
+                } else if (this.state.verificationCode.length < 4) {
+                    this.setState({
+                        isVerificationCodeShakeAnimateShow: true,
+                        isVerificationCodeErrorMessageShow: true,
+                        verificationCodeErrorMessage: "请输入4位验证码",
+                    })
+                } else {
+                    this.setState({
+                        isVerificationCodeErrorMessageShow: false
+                    })
+                }
+                if(this.state.password.length === 0) {
+                    this.setState({
+                        isPasswordShakeAnimateShow: true,
+                        passwordErrorMessage: "请输入密码",
+                        isPasswordErrorMessageShow: true
+                    })
+                } else if (this.state.password.length < 6) {
+                    this.setState({
+                        isPasswordShakeAnimateShow: true,
+                        passwordErrorMessage: "请输入6-16位登录密码",
+                        isPasswordErrorMessageShow: true
+                    })
+                } else {
+                    this.setState({
+                        isPasswordErrorMessageShow: false
+                    })
+                }
+                if(this.state.rePassword.length === 0) {
+                    this.setState({
+                        isrePasswordErrorMessageShow: true,
+                        isRePasswordShakeAnimateShow: true,
+                        rePasswordErrorMessage: "请再次确认登录密码"
+                    })
+                } else if (this.state.rePassword != this.state.password) {
+                    this.setState({
+                        isrePasswordErrorMessageShow: true,
+                        isRePasswordShakeAnimateShow: true,
+                        rePasswordErrorMessage: "两次密码输入不一致"
+                    })
+                } else if (this.state.rePassword.length < 6) {
+                    this.setState({
+                        isrePasswordErrorMessageShow: true,
+                        isRePasswordShakeAnimateShow: true,
+                        rePasswordErrorMessage: "请输入6-16位登录密码"
+                    })
+                } else {
+                    this.setState({
+                        isrePasswordErrorMessageShow: false,
+                    })
+                }
 
-            isVerificationCodeErrorMessageShow: false,
-            isrePasswordErrorMessageShow: false,
-            isPasswordErrorMessageShow: false,
-            
-            if(this.state.verificationCode.length < 4) {
-                this.setState({
-                    isVerificationCodeShakeAnimateShow: false
-                })
-            }
-       */
+                // 验证码、密码、确认密码输入正确
+                if (!this.state.isVerificationCodeErrorMessageShow && !this.state.isrePasswordErrorMessageShow && !this.state.isPasswordErrorMessageShow) {
+                    console.log("输入正确，准备登陆");
+                }
+
+
+
+            }, 100);
+        });
+
     }
 
     changeAgreementCheckStatus = () => {
