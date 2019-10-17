@@ -13,7 +13,7 @@ const Reducer = (state = initState, action) => {
             state.isRegisterPartShow = true;
             state.isResetPasswordPartShow = false;
             return state;
-        case SHOW_REGISTER_PAERT:
+        case SHOW_RESET_PASSWORD_PART:
             state.isLoginPartShow = false;
             state.isRegisterPartShow = false;
             state.isResetPasswordPartShow = true;

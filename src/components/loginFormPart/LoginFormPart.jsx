@@ -2,7 +2,7 @@ import React from 'react'
 import './loginFormPart.scss'
 import { Icon } from 'antd';
 import Store from 'myRedux/Store';
-import { createShowRegisterPartAction } from 'myRedux/actionCreator'
+import { createShowRegisterPartAction, createShowResetPasswordPartAction } from 'myRedux/actionCreator'
 
 class LoginFormPart extends React.Component {
     constructor(props) {
@@ -49,7 +49,7 @@ class LoginFormPart extends React.Component {
                     </div>
                 </div>
                 <div className="register">
-                    <span>忘记密码</span>
+                    <span onClick={this.gotoResetPassword}>忘记密码</span>
                     <span onClick={this.gotoRegister}>立即注册</span>
                 </div>
                 <div className="login-type">
@@ -118,6 +118,12 @@ class LoginFormPart extends React.Component {
 
     gotoRegister = () => {
         let type = createShowRegisterPartAction();
+        Store.dispatch(type);
+    }
+
+    gotoResetPassword = () => {
+        console.log(666);
+        let type = createShowResetPasswordPartAction();
         Store.dispatch(type);
     }
 

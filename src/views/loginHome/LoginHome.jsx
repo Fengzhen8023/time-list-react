@@ -1,6 +1,7 @@
 import React from 'react'
 import LoginFormPart from 'components/loginFormPart/LoginFormPart'
 import RegisterFormPart from 'components/registerFormPart/RegisterFormPart'
+import ResetParrwordPart from 'components/resetParrwordPart/ResetParrwordPart'
 import Store from 'myRedux/Store'
 
 import './LoginHome.scss'
@@ -65,6 +66,9 @@ class Login extends React.Component {
         }
         if (this.state.isRegisterPartShow) {
             return (<RegisterFormPart />)
+        }
+        if (this.state.isResetPasswordPartShow) {
+            return (<ResetParrwordPart />)
         }
     }
 
