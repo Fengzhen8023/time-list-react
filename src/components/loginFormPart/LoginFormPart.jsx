@@ -1,6 +1,8 @@
 import React from 'react'
 import './loginFormPart.scss'
 import { Icon } from 'antd';
+import Store from 'myRedux/Store';
+import { createShowRegisterPartAction } from 'myRedux/actionCreator'
 
 class LoginFormPart extends React.Component {
     constructor(props) {
@@ -48,7 +50,7 @@ class LoginFormPart extends React.Component {
                 </div>
                 <div className="register">
                     <span>忘记密码</span>
-                    <span>立即注册</span>
+                    <span onClick={this.gotoRegister}>立即注册</span>
                 </div>
                 <div className="login-type">
                     <div className="icon-box"><Icon onClick={this.loginByQQ} type="qq" /></div>
@@ -112,6 +114,11 @@ class LoginFormPart extends React.Component {
                 isPasswordErrorMessageShow: true
             });
         }, 100)
+    }
+
+    gotoRegister = () => {
+        let type = createShowRegisterPartAction();
+        Store.dispatch(type);
     }
 
     loginByQQ = () => {

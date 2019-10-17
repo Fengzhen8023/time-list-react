@@ -1,9 +1,7 @@
 import React from 'react'
-import { Icon } from 'antd';
 import LoginFormPart from 'components/loginFormPart/LoginFormPart'
 import RegisterFormPart from 'components/registerFormPart/RegisterFormPart'
 import Store from 'myRedux/Store'
-import { SHOW_LOGIN_PART, SHOW_REGISTER_PAERT, SHOW_RESET_PASSWORD_PART } from 'myRedux/actionType'
 
 import './LoginHome.scss'
 import 'css/animate.css'
@@ -25,7 +23,7 @@ class Login extends React.Component {
         Store.subscribe(() => {
             this.setState((preState, props) => ({
                 ...preState,
-                ...Store.getState
+                ...Store.getState()
             }));
         });
     }
@@ -46,9 +44,7 @@ class Login extends React.Component {
                 </div>
 
                 <div className="login-content">
-                    {/* <LoginFormPart /> */}
-
-                    <RegisterFormPart />
+                    { this.controlPartShow() }
                     <div className="about-link">
                         <span>广州奇创信息科技有限公司</span>
                         <a href="#">www.shiguangxu.com</a>
@@ -61,6 +57,15 @@ class Login extends React.Component {
                 </div>
             </div>
         );
+    }
+
+    controlPartShow = () => {
+        if (this.state.isLoginPartShow) {
+            return (<LoginFormPart />)
+        }
+        if (this.state.isRegisterPartShow) {
+            return (<RegisterFormPart />)
+        }
     }
 
     getImage(imageName) {

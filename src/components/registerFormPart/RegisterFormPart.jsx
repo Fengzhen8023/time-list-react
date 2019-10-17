@@ -1,6 +1,8 @@
 import React from 'react'
 import './RegisterFormPart.scss'
 import { Icon } from 'antd';
+import Store from 'myRedux/Store';
+import { createShowLoginPartAction } from 'myRedux/actionCreator';
 
 class RegisterFormPart extends React.Component {
     constructor(props) {
@@ -53,7 +55,7 @@ class RegisterFormPart extends React.Component {
                     <div className="register-option">
                         <div className="return-option option-box">
                             <Icon type="arrow-left" />
-                            <span>返回登陆</span>
+                            <span onClick={this.gotoLogin}>返回登陆</span>
                         </div>
                         <div
                             onClick={() => this.isGoToRegister()}
@@ -115,7 +117,7 @@ class RegisterFormPart extends React.Component {
                         <div className="register-option">
                             <div className="return-option option-box">
                                 <Icon type="arrow-left" />
-                                <span>返回登陆</span>
+                                <span onClick={this.gotoLogin}>返回登陆</span>
                             </div>
                             <div
                                 onClick={() => this.confirmRegister()}
@@ -316,6 +318,11 @@ class RegisterFormPart extends React.Component {
         this.setState((preState, props) => ({
             isAgreementChecked: !preState.isAgreementChecked
         }));
+    }
+
+    gotoLogin = () => {
+        let type = createShowLoginPartAction();
+        Store.dispatch(type);
     }
 
     loginByQQ = () => {
