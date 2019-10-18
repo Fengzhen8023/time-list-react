@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>tab_icon_taday_sel</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="6.0546875%" y1="0%" x2="93.9453125%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#CCE6FF" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-77.8%" y="-72.9%" width="255.6%" height="245.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0911124884   0 0 0 0 0.299026365   0 0 0 0 0.478062726  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#B5DDFF" offset="0%"></stop>
+            <stop stop-color="#9FD2FA" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="16.5289256%" y1="0%" x2="83.4710744%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#CCE6FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="tab_icon_taday_sel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" filter="url(#filter-2)" transform="translate(18.000000, 16.000000)">
+            <rect id="Rectangle" fill="url(#linearGradient-3)" fill-rule="nonzero" x="0" y="3.19999981" width="44.5279993" height="44.5279993" rx="3.87199994"></rect>
+            <rect id="Rectangle-Copy-4" fill="url(#linearGradient-4)" fill-rule="nonzero" x="4.79999971" y="0" width="34.8479994" height="42.5919993" rx="1.93599997"></rect>
+            <path d="M6.77599989,0 L37.7519994,-2.22044605e-16 C38.8212226,-4.18457731e-16 39.6879994,0.86677671 39.6879994,1.93599997 L39.6879994,7.74399987 L4.83999992,7.74399987 L4.83999992,1.93599997 C4.83999992,0.86677671 5.70677663,4.18457731e-16 6.77599989,2.22044605e-16 Z" id="Rectangle" fill="#FA6400" opacity="0.2"></path>
+            <text id="20" opacity="0.701678781" font-family="MerriweatherSans-Bold, Merriweather Sans" font-size="17.5999993" font-weight="bold" line-spacing="21.1199992" fill="#FA6400">
+                <tspan x="11" y="31">20</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
