@@ -11,9 +11,9 @@ class App extends React.Component {
         return (
             <div className="app-box">
                {/* <LoginHome /> */}
-               {/* <Record /> */}
+               <Record />
                {/* <Today /> */}
-               <Person />
+               {/* <Person /> */}
             </div> 
         );
     }

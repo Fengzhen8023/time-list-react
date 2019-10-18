@@ -1,0 +1,58 @@
+.ant-tabs-tab {
+    margin: 0.5rem 0rem 0.5rem 0.5rem !important;
+    padding: 6px 20px !important;
+    color: #fff;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+}
+
+.ant-tabs-ink-bar {
+    display: none !important;
+}
+
+.ant-tabs-tab:nth-child(1) {
+    background: rgb(251, 171, 105);
+    border: 2px solid rgb(251, 171, 105);
+}
+.ant-tabs-tab:nth-child(2) {
+    background: rgb(255, 110, 100);
+    border: 2px solid rgb(255, 110, 100);
+}
+.ant-tabs-tab:nth-child(3) {
+    background: rgb(74, 202, 145);
+    border: 2px solid rgb(74, 202, 145);
+}
+.ant-tabs-tab:nth-child(4) {
+    background: rgb(38, 138, 247);
+    border: 2px solid rgb(38, 138, 247);
+}
+.ant-tabs-tab:nth-child(5) {
+    background: rgb(170, 114, 253);
+    border: 2px solid rgb(170, 114, 253);
+}
+
+.ant-tabs-tab-active {
+    background: #fff !important;
+}
+
+.ant-tabs-tab:nth-child(1).ant-tabs-tab-active {
+    color: rgb(251, 171, 105);
+    border-color: rgb(251, 171, 105);
+}
+.ant-tabs-tab:nth-child(2).ant-tabs-tab-active {
+    color: rgb(255, 110, 100);
+    border-color: rgb(255, 110, 100);
+}
+.ant-tabs-tab:nth-child(3).ant-tabs-tab-active {
+    color: rgb(74, 202, 145);
+    border-color: rgb(74, 202, 145);
+}
+.ant-tabs-tab:nth-child(4).ant-tabs-tab-active {
+    color: rgb(38, 138, 247);
+    border-color: rgb(38, 138, 247);
+}
+.ant-tabs-tab:nth-child(5).ant-tabs-tab-active {
+    color: rgb(170, 114, 253);
+    border-color: rgb(170, 114, 253);
+}
