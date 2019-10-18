@@ -6,27 +6,27 @@ class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activebar: "recode"
+            activebar: "record"
         }
     }
 
     render() {
         return (
-            <div className="sidebar-part">
+            <div className="sidebar-component">
                 <div className="sidebar-top">
                     <img src={this.getImage("logo.svg")} alt="logo" className="logo" />
                 </div>
 
                 <div className="sidebar-middle">
                     <div
-                        onClick={() => this.setActivebar("recode")}
-                        className={`today-icon-box${this.state.activebar === "recode" ? " active" : ""}`}>
+                        onClick={() => this.setActivebar("record")}
+                        className={`today-icon-box${this.state.activebar === "record" ? " active" : ""}`}>
                         <img
-                            className={`recode-icon-active${this.state.activebar === "recode" ? "" : " hide-item"}`}
-                            src={this.getImage("recode-active.svg")} alt="recode-icon" />
+                            className={`record-icon-active${this.state.activebar === "record" ? "" : " hide-item"}`}
+                            src={this.getImage("record-active.svg")} alt="record-icon" />
                         <img
-                            className={`recode-icon-active${this.state.activebar === "recode" ? " hide-item" : ""}`}
-                            src={this.getImage("recode.svg")} alt="recode-icon" />
+                            className={`record-icon-active${this.state.activebar === "record" ? " hide-item" : ""}`}
+                            src={this.getImage("record.svg")} alt="record-icon" />
                         <span>记录</span>
                     </div>
 

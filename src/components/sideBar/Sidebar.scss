@@ -1,5 +1,5 @@
-.sidebar-part {
-    width: 8%;
+.sidebar-component {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     }
 
     .sidebar-middle {
-       .recode-icon-box, .today-icon-box {
+       .record-icon-box, .today-icon-box {
             text-align: center;
             color: #fff;
             cursor: pointer;
