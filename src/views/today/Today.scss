@@ -1,0 +1,21 @@
+.today-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg,#8ccdff,#4ba2f3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+    .sidebar-part {
+        width: 10%;
+        height: 100%;
+    }
+
+    .today-part {
+        width: 90%;
+        height: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+}
