@@ -6,10 +6,10 @@
 - react-router @5.0.1
 - webpack @4.39.1
 
-###　项目运行
+### 项目运行
 
 ```shell
-git clone ****** （拉去代码）
+git clone https://github.com/Fengzhen8023/time-list-react.git （拉取代码）
 
 cd time-list-react （进入项目）
 
@@ -55,3 +55,6 @@ npm run start （启动服务）
 
 - **[简书主页](https://www.jianshu.com/u/231315b8e406)**
 - **[掘进主页](https://juejin.im/user/5c7a97d56fb9a049d132da41)**
+
+
+
