@@ -1,0 +1,133 @@
+.register-main {
+    width: 100%;
+    bottom: 0rem;
+
+    .register-title {
+        max-width: 100%;
+        font-size: 25px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .register-step {
+        .info-form {
+            width: 25rem;
+            margin: 2rem auto;
+
+            .phone-number {
+                color: #fff;
+                line-height: normal;
+                font-size: 20px;
+                margin-bottom: 1rem;
+            }
+
+            .input-box {
+                position: relative;
+                margin-bottom: 1rem;
+
+                input {
+                    width: 100%;
+                    height: 52px;
+                    text-align: center;
+                    font-size: 16px;
+                    color: hsla(0, 0%, 100%, .8);
+                    background: hsla(0, 0%, 100%, .4);
+                    border-radius: 52px;
+                    border: none;
+                    outline: none;
+                    box-sizing: border-box;
+                }
+
+                .varification-input {
+                    text-align: left;
+                    padding-left: 6rem;
+                }
+
+                .getVericationCode {
+                    position: absolute;
+                    width: 6rem;
+                    top: 50%;
+                    left: 60%;
+                    transform: translate(0, -50%);
+                    color: #fff;
+                    cursor: pointer;
+
+                    .pipe-symbol {
+                        margin-right: 1rem;
+                    }
+                }
+    
+                .error-message {
+                    width: 20rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 110%;
+                    transform: translate(0, -50%);
+                    color: #fff;
+                    font-size: 16px;
+                }
+    
+                input:focus {
+                    box-shadow: 0 8px 18px 0 rgba(2, 92, 209, .57);
+                }
+    
+                input::-webkit-input-placeholder {
+                    color: #fff;
+                }
+    
+                input:-moz-placeholder {
+                    color: #fff;
+                }
+    
+                input::-moz-placeholder {
+                    color: #fff;
+                }
+    
+                input:-ms-input-placeholder {
+                    color: #fff;
+                }
+            }
+        }
+
+        .register-option {
+            width: 25rem;
+            color: hsla(0, 0%, 100%, .8);
+            margin: 3rem auto 5rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .option-box {
+                cursor: pointer;
+            }
+
+            .return-option {
+                span {
+                    margin-left: 0.5rem;
+                }
+            }
+
+            .next-option {
+                width: 10rem;
+                height: 3rem;
+                border-radius: 3rem;
+                line-height: 3rem;
+                text-align: center;
+                background: #fff;
+                color: rgba(75, 162, 243, .8);
+
+                span {
+                    margin-right: 0.5rem;
+                }
+            }
+
+            .next-option:hover {
+                color: rgb(75, 162, 243);
+            }
+        }
+    }
+}
+
+.hide-item {
+    display: none !important;
+}

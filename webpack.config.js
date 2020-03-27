@@ -22,7 +22,9 @@ module.exports = {
         alias: {
             components: path.resolve(__dirname, "src/components"),
             views: path.resolve(__dirname, "src/views"),
-            images: path.resolve(__dirname, "src/asset/images")
+            images: path.resolve(__dirname, "src/asset/images"),
+            css: path.resolve(__dirname, "src/asset/css"),
+            myRedux: path.resolve(__dirname, "src/redux")
         }  
     },
     plugins: [
