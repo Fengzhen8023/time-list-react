@@ -1,6 +1,6 @@
 import React from 'react'
 import './loginFormPart.scss'
-import { Icon } from 'antd';
+import { ArrowRightOutlined, QqOutlined, WechatOutlined } from '@ant-design/icons';
 import Store from 'myRedux/Store';
 import { createShowRegisterPartAction, createShowResetPasswordPartAction } from 'myRedux/actionCreator'
 
@@ -45,7 +45,8 @@ class LoginFormPart extends React.Component {
                             placeholder={this.state.passwordPlaceholder}
                             type="password" className="password" />
                         <span className={`error-message${this.state.isAccountErrorMessageShow ? "" : " hide-item"}`}>请输入密码</span>
-                        <Icon onClick={this.login} type="arrow-right" className="login-btn" />
+                        {/* <Icon onClick={this.login} type="arrow-right" className="login-btn" /> */}
+                        <ArrowRightOutlined onClick={this.login} className="login-btn" />
                     </div>
                 </div>
                 <div className="register">
@@ -53,8 +54,8 @@ class LoginFormPart extends React.Component {
                     <span onClick={this.gotoRegister}>立即注册</span>
                 </div>
                 <div className="login-type">
-                    <div className="icon-box"><Icon onClick={this.loginByQQ} type="qq" /></div>
-                    <div className="icon-box"><Icon onClick={this.loginByWechat} type="wechat" /></div>
+                    <div className="icon-box"><QqOutlined onClick={this.loginByQQ} /></div>
+                    <div className="icon-box"><WechatOutlined onClick={this.loginByWechat} /></div>
                 </div>
             </div>
         );

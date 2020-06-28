@@ -1,6 +1,6 @@
 import React from 'react'
 import './ResetParrwordPart.scss'
-import { Icon } from 'antd';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import Store from 'myRedux/Store';
 import { createShowLoginPartAction } from 'myRedux/actionCreator';
 
@@ -78,7 +78,7 @@ class ResetParrwordPart extends React.Component {
 
                         <div className="register-option">
                             <div className="return-option option-box">
-                                <Icon type="arrow-left" />
+                                <ArrowLeftOutlined />
                                 <span onClick={this.gotoLogin}>返回登陆</span>
                             </div>
                             <div
