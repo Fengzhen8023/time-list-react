@@ -1,0 +1,17 @@
+.content-page {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100vw;
+  height: 100vh;
+
+  .left-side-bar {
+    width: 15rem;
+    height: 100%;
+  }
+
+  .right-side-content {
+    flex-grow: 1;
+    height: 100%;
+    background: lightpink;
+  }
+}
