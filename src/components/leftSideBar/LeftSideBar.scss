@@ -33,10 +33,14 @@ $optionHoverBg: rgb(216, 218, 229);
 
   .collapse-container {
 
+    .collapse-header {
+      display: flex;
+      align-items: center;
 
-    .heder-icon {
-      margin-right: 0.4rem;
-      font-size: 20px;
+      .heder-icon {
+        margin-right: 0.4rem;
+        font-size: 20px;
+      }
     }
 
     .option {

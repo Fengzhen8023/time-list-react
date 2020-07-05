@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SettingOutlined, SyncOutlined, DiffOutlined, AppstoreOutlined, CalendarOutlined, ContainerOutlined, InteractionOutlined, TableOutlined, ReconciliationOutlined, ScheduleOutlined } from '@ant-design/icons';
+import { SettingOutlined, SyncOutlined, DiffOutlined, AppstoreOutlined, CalendarOutlined, ContainerOutlined, InteractionOutlined, TableOutlined, ReconciliationOutlined, ScheduleOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import { getImage } from 'components/utils/tools';
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
@@ -11,7 +11,7 @@ const LeftSideBar = () => {
 
   const renderCollapseHeader = (icon, text) => {
     return (
-      <div>
+      <div className="collapse-header">
         {icon}
         <span>{text}</span>
       </div>
@@ -72,7 +72,7 @@ const LeftSideBar = () => {
               <span>重复</span>
             </div>
           </Panel>
-          <Panel header={renderCollapseHeader(<DiffOutlined className="heder-icon" />, "今日")}>
+          <Panel header={renderCollapseHeader(<FieldTimeOutlined className="heder-icon" />, "今日")}>
             <div className="option" onClick={ () => handleClickRightMenu("myDay") }>
               <ScheduleOutlined className="option-icon" />
               <span>我的一天</span>
