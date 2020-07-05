@@ -1,0 +1,27 @@
+/* modify the css of ant package */
+.ant-tooltip-inner {
+  color: #555;
+  padding: 0;
+
+  .menu-icon {
+    font-size: 18px;
+  }
+
+  .menu-list {
+    li {
+      height: 2.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+
+      &:hover {
+        background: rgba(46, 67, 87, 0.06);
+      }
+
+      .menu-text {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
