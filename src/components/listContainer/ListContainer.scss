@@ -1,0 +1,93 @@
+.list-container {
+  width: 25rem;
+  min-width: 25rem;
+  height: 100%;
+  padding: 0.2rem 1rem;
+  margin: 0 1rem;
+  background: white;
+  border-radius: 0.8rem;
+  box-shadow: 0px 0px 10px #ccc;
+
+  .header {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+
+    .left-icon {
+      font-size: 16px;
+
+      .header-title {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .right-icon {
+      display: none;
+    }
+
+    &:hover {
+      .right-icon {
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .add-new-item {
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    line-height: 2.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+
+    .icon {
+      margin: 0rem 0.8rem;
+    }
+
+    .place-holder {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 5px #ddd;
+
+      .place-holder {
+        display: inline;
+      }
+    }
+  }
+
+  .list-content {
+    li {
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      padding: 0 0.5rem;
+
+      &:hover {
+        background: rgba(75,162,243,.06);
+      }
+
+      .cirle-icon {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid white;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .finish-icon {
+        color: white;
+        cursor: pointer;
+      }
+
+      .item-name {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}

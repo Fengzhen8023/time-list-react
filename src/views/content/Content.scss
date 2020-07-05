@@ -6,6 +6,7 @@
 
   .left-side-bar {
     width: 15rem;
+    min-width: 15rem;
     height: 100%;
   }
 
@@ -14,16 +15,20 @@
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
-    background: lightpink;
+    overflow: auto;
+    // background: lightpink;
 
     .right-header {
       height: 4rem;
-      background: lightgray;
+      // background: lightgray;
     }
 
     .right-body {
+      padding: 2rem 0;
       flex-grow: 1;
-      background: lightslategray;
+      display: flex;
+      // background: lightslategray;
+      overflow: auto;      
     }
   }
 }
