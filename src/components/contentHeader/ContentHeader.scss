@@ -1,0 +1,45 @@
+.content-header {
+  height: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    font-size: 20px;
+  }
+
+
+  .right {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    .show-manage {
+      display: flex;
+      align-items: center;
+      margin-right: 1.5rem;
+      cursor: pointer;
+
+      span {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .hide-finished {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .ant-picker-input {
+    input {
+      font-size: 18px;
+    }
+  }
+
+}
