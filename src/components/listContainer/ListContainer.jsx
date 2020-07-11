@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tooltip } from 'antd';
+import { Tooltip, Button  } from 'antd';
 import { 
   StarFilled, MenuOutlined, PlusOutlined, CheckOutlined, SnippetsOutlined, HighlightOutlined, 
   LineHeightOutlined, ArrowRightOutlined, EyeOutlined, DeleteOutlined, ClockCircleOutlined,
@@ -29,6 +29,8 @@ const defaultListData = [
 
 const ListContainer = ({ listThemeColor = "lightcoral", listData = defaultListData }) => {
   const [footerIconShow, setFooterIconShow] = useState(false);
+  const [listMenuVisible, setListMenuVisible] = useState(false);
+  const [isListMenuTriggerIconVisible, setIsListMenuTriggerIconVisible] = useState(true);
 
   const addNewItem = () => {
     console.log("You click add new item button");
@@ -132,9 +134,11 @@ const ListContainer = ({ listThemeColor = "lightcoral", listData = defaultListDa
   }
 
   const handleListMenuClick = (menuKey) => {
+    setListMenuVisible(false);
     switch(menuKey) {
       case "batchEdit":
         setFooterIconShow(true);
+        setIsListMenuTriggerIconVisible(false);
         console.log("进行批量编辑");
         break;
       case "editTypeTitle":
@@ -153,6 +157,32 @@ const ListContainer = ({ listThemeColor = "lightcoral", listData = defaultListDa
         console.log("进行删除分类");
         break;
     }
+  }
+
+  const handleClickCancelBtn = () => {
+    setIsListMenuTriggerIconVisible(true);
+    setFooterIconShow(false);
+  }
+
+  const renderListHeaderRight = () => {
+    if (!isListMenuTriggerIconVisible) {
+      return <Button size="small" onClick={handleClickCancelBtn}>取消</Button>;
+    }
+
+    return (
+      <div className="right-icon">
+        <Tooltip
+          title={renderModifyListMenu()}
+          trigger="click"
+          color="white"
+          placement="bottom"
+          visible={listMenuVisible}
+          onVisibleChange={(visible) => { setListMenuVisible(visible) }}
+          mouseLeaveDelay={1}>
+          <MenuOutlined onClick={modifyCurrentListContainer} />
+        </Tooltip>
+      </div>
+    );
   }
 
   const renderModifyListMenu = () => {
@@ -212,16 +242,7 @@ const ListContainer = ({ listThemeColor = "lightcoral", listData = defaultListDa
           <StarFilled />
           <span className="header-title">我的书单</span>
         </div>
-        <div className="right-icon">
-          <Tooltip
-            title={renderModifyListMenu()}
-            trigger="click"
-            color="white"
-            placement="bottom"
-            mouseLeaveDelay={1}>
-            <MenuOutlined onClick={modifyCurrentListContainer} />
-          </Tooltip>
-        </div>
+        {renderListHeaderRight()}
       </div>
 
 
