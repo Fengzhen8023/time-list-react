@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tooltip } from 'antd';
-import { StarFilled, MenuOutlined, PlusOutlined, CheckOutlined, SnippetsOutlined, HighlightOutlined, LineHeightOutlined, ArrowRightOutlined, EyeOutlined, DeleteOutlined } from '@ant-design/icons';
+import { 
+  StarFilled, MenuOutlined, PlusOutlined, CheckOutlined, SnippetsOutlined, HighlightOutlined, 
+  LineHeightOutlined, ArrowRightOutlined, EyeOutlined, DeleteOutlined, ClockCircleOutlined,
+  BookOutlined, CheckSquareOutlined, TagsOutlined 
+} from '@ant-design/icons';
 
 import './ListContainer.scss';
 import 'css/common.scss';
@@ -24,6 +28,7 @@ const defaultListData = [
 ];
 
 const ListContainer = ({ listThemeColor = "lightcoral", listData = defaultListData }) => {
+  const [footerIconShow, setFooterIconShow] = useState(false);
 
   const addNewItem = () => {
     console.log("You click add new item button");
@@ -75,9 +80,61 @@ const ListContainer = ({ listThemeColor = "lightcoral", listData = defaultListDa
     return listHtml;
   }
 
+  const renderFooterIcon = () => {
+    if (!footerIconShow) {
+      return <></>
+    }
+    
+    const footIconData = [
+      {
+        icon: <ClockCircleOutlined className="foot-action-icon" />,
+        text: "时间",
+        iconKey: "time"
+      },
+      {
+        icon: <TagsOutlined className="foot-action-icon" />,
+        text: "分类",
+        iconKey: "type"
+      },
+      {
+        icon: <BookOutlined className="foot-action-icon" />,
+        text: "重要程度",
+        iconKey: "importance"
+      },
+      {
+        icon: <CheckSquareOutlined className="foot-action-icon" />,
+        text: "完成",
+        iconKey: "finish"
+      },
+      {
+        icon: <DeleteOutlined className="foot-action-icon" />,
+        text: "删除",
+        iconKey: "delete"
+      }
+    ];
+
+    return (
+      <ul className="footer">
+        {
+          footIconData.map(footerIcon => (
+            <li className="foot-action" key={footerIcon.iconKey} onClick={() => {handleClickFooterIcon(footerIcon.iconKey)}}>
+              {footerIcon.icon}
+              <p>{footerIcon.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    )
+  }
+
+  const handleClickFooterIcon = (iconKey) => {
+    console.log("You click ", iconKey);
+  }
+
   const handleListMenuClick = (menuKey) => {
     switch(menuKey) {
       case "batchEdit":
+        setFooterIconShow(true);
         console.log("进行批量编辑");
         break;
       case "editTypeTitle":
@@ -176,6 +233,9 @@ const ListContainer = ({ listThemeColor = "lightcoral", listData = defaultListDa
       <ul className="list-content">
         {renderList(listData)}
       </ul>
+
+      
+      {renderFooterIcon()}
 
 
     </div>
