@@ -14,7 +14,7 @@ module.exports = {
         historyApiFallback: true,   // 不跳转
         inline: true,               // 实时刷新
         port: 3000,                 // 项目端口
-        open: false,                // 不自动打开浏览器
+        open: true,                // 不自动打开浏览器
     },
     resolve: {
         // 引入文件不写后缀名的时候，通过以下顺序尝试引入文件
