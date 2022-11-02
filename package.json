@@ -42,6 +42,23 @@
     "redux": "^4.0.4"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/src/jest.config.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/jest.config.js"
+    ],
+    "collectCoverageFrom": [
+      "./src/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "./node_modules",
+      "./dist"
+    ]
   }
 }
